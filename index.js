@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const mysql = require('mysql2');
-const { start } = require('repl');
-//const connection = require('./server')
+
+
 
 const connection = mysql.createConnection(
   {
@@ -45,33 +45,27 @@ inquirer.prompt([
 .then(response => {
     const correspondingFunction = response.userChoice;
     if (correspondingFunction === "View all departments") {
-      //viewDepartments();
       viewDept();
     
     };
 
     if (correspondingFunction === "View all roles") {
-      //viewRoles();
       viewRoles();
     };
 
     if (correspondingFunction === "View all employees") {
-      //viewEmployees();
       viewEmployees();
     };
 
     if (correspondingFunction === "Add a department") {
-      //addDepartment();
       addDept()
     };
 
     if (correspondingFunction === "Add a role") {
-      //addRole();
       addTitle()
     };
 
     if (correspondingFunction === "Add an employee") {
-      //addEmployee();
       addEmployee()
     };
 
@@ -79,17 +73,9 @@ inquirer.prompt([
       updateEmployee();
     };
 
-    if (correspondingFunction === "Update an employee's manager") {
+    //if (correspondingFunction === "Update an employee's manager") {
       //updateEmployeeManager();
-    };
-
-    // if (correspondingFunction === "View employees by manager") {
-    //   //viewByManager();
-    // };
-
-    // if (correspondingFunction === "View employees by department") {
-    //   //viewByDepartment();
-    // };
+    //};
 
     if (correspondingFunction === "Remove a department") {
       //removeDepartment();
